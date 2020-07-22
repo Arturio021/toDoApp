@@ -91,6 +91,10 @@ inputTask.addEventListener("keypress", function(keyPressed) {
         newElemSpan.innerHTML = "&#9851";
         // получаем value из input
         var newToDo = this.value;
+        if (newToDo === "") {
+            alert("Значение  не должно быть нулевым!!");
+            return false;
+        }
         // Чтоб поле ввода очищалось после нажатия
         this.value = "";
 
@@ -98,10 +102,7 @@ inputTask.addEventListener("keypress", function(keyPressed) {
         // Append - добавляет всё на одном уровне
         ulSpisok.appendChild(newElemLi).append(newElemSpan, newToDo, fullDate);
     }
-    if ((newToDo = "")) {
-        alert("Значение  не должно быть нулевым!!");
-        return false;
-    }
+
     // Проверка на пустое поле
 
     deleteToDo();
