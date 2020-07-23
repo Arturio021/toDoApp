@@ -6,6 +6,7 @@ var spans = document.getElementsByTagName("span");
 var saveBtn = document.getElementById("save");
 // Удаление данных
 var clearBtn = document.getElementById("clear");
+var allElemLi = document.getElementsByTagName("li");
 
 // Функия, которая занимается удалением span
 function deleteToDo() {
@@ -92,7 +93,7 @@ inputTask.addEventListener("keypress", function(keyPressed) {
         // получаем value из input
         var newToDo = this.value;
         if (newToDo === "") {
-            alert("Значение  не должно быть нулевым!!");
+            alert("Введите данные!");
             return false;
         }
         // Чтоб поле ввода очищалось после нажатия
@@ -103,10 +104,25 @@ inputTask.addEventListener("keypress", function(keyPressed) {
         ulSpisok.appendChild(newElemLi).append(newElemSpan, newToDo, fullDate);
     }
 
-    // Проверка на пустое поле
-
     deleteToDo();
+    changeTextLi();
 });
 
+// Информация о себе
+var inform = prompt("Введите ФИО");
+var informBtn = document.getElementById("information");
+informBtn.addEventListener("click", function() {
+    alert(inform);
+});
+
+// функция для зачёркивания текста
+function changeTextLi() {
+    for (let li of allElemLi) {
+        li.addEventListener("click", function() {
+            element.classList.add("linethrough");
+        });
+    }
+}
+changeTextLi();
 deleteToDo();
 loadToDo();

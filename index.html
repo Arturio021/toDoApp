@@ -9,12 +9,19 @@
 </head>
 
 <body>
-    <h1>ToDo-application</h1>
     <section class="todo">
-        <input type="text" placeholder="Введите задачу" />
-        <ul id="list"></ul>
-        <button id="save">Сохранить всё</button>
-        <button id="clear">Очистить всё</button>
+        <div class="header">
+            <h1>ToDo-application</h1>
+        </div>
+        <div class="inpTasks">
+            <input type="text" placeholder="Введите задачу" />
+            <ul id="list" class="list"></ul>
+        </div>
+        <div class="allBtn">
+            <button id="save">Сохранить всё</button>
+            <button id="clear">Очистить всё</button>
+            <button id="information">Информация о себе</button>
+        </div>
     </section>
     <script src="script.js"></script>
 </body>
