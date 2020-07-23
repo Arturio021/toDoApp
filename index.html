@@ -5,24 +5,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/style.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet" />
     <title>ToDo</title>
 </head>
 
 <body>
-    <section class="todo">
-        <div class="header">
-            <h1>ToDo-application</h1>
-        </div>
-        <div class="inpTasks">
-            <input type="text" placeholder="Введите задачу" />
-            <ul id="list" class="list"></ul>
-        </div>
-        <div class="allBtn">
-            <button id="save">Сохранить всё</button>
-            <button id="clear">Очистить всё</button>
-            <button id="information">Информация о себе</button>
-        </div>
-    </section>
+    <div class="container">
+        <section class="todo">
+            <h1 class="title">ToDo-application</h1>
+
+            <div class="inpTasks">
+                <input type="text" placeholder="Введите задачу" />
+                <ul id="list" class="list"></ul>
+            </div>
+
+            <button class="allBtn" id="save">
+          <strong class="textForBtn">Сохранить всё</strong>
+        </button>
+            <button class="allBtn" id="clear">
+          <strong class="textForBtn">Очистить всё</strong>
+        </button>
+            <button class="allBtn" id="information">
+          <strong class="textForBtn">Информация о себе</strong>
+        </button>
+        </section>
+    </div>
     <script src="script.js"></script>
 </body>
 

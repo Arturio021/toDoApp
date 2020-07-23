@@ -119,7 +119,7 @@ informBtn.addEventListener("click", function() {
 function changeTextLi() {
     for (let li of allElemLi) {
         li.addEventListener("click", function() {
-            element.classList.add("linethrough");
+            li.classList.add("linethrough");
         });
     }
 }
