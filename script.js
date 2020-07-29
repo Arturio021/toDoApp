@@ -108,41 +108,19 @@ inputTask.addEventListener("keypress", function(keyPressed) {
     changeTextLi();
 });
 
-var inform = prompt("Введите ФИО");
+// git Информация о себе
+var button = document.getElementById("information");
 
-function InformAboutUser() {
-    if (localStorage.getItem("InfAboutUser")) {
-        inform.innerHTML = localStorage.getItem("InfAboutUser");
-    }
+var inform = sessionStorage.getItem("InformationAboutUser", inform);
+
+if (!inform) {
+    inform = prompt("Введите ФИО");
+    sessionStorage.setItem("InformationAboutUser", inform);
 }
-var inform = prompt("Введите данные");
-var reloaded = function() {}; //страницу перезагрузили
 
-localStorage.setItem("InfAboutUser", inform);
-var informBtn = document.getElementById("information");
-informBtn.addEventListener("click", function() {
+button.addEventListener("click", function() {
     alert(inform);
 });
-
-window.onload = function() {
-    var loaded = sessionStorage.getItem("loaded");
-
-    if (loaded) {
-        reloaded();
-    } else {
-        sessionStorage.setItem("loaded", inform);
-    }
-};
-
-// git Информация о себе
-var inform = prompt("Введите данные");
-var informBtn = document.getElementById("information");
-informBtn.addEventListener("click", function() {});
-
-function loadInformAboutUser() {
-    localStorage.setItem("InfAboutUser", inform);
-}
-if (localStorage.getItem("InfAboutUser") !== inform)
 // функция для зачёркивания текста
 function changeTextLi() {
     for (let li of allElemLi) {
